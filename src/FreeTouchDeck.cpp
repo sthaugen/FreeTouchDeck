@@ -40,11 +40,11 @@
 
 // ------- Uncomment the next line if you use capacitive touch -------
 // (THE ESP32 TOUCHDOWN USES THIS!)
-//#define USECAPTOUCH
+#define USECAPTOUCH
 
 // ------- Uncomment and populate the following if your cap touch uses custom i2c pins -------
-//#define CUSTOM_TOUCH_SDA 26
-//#define CUSTOM_TOUCH_SCL 27
+#define CUSTOM_TOUCH_SDA 18
+#define CUSTOM_TOUCH_SCL 19
 
 // PAY ATTENTION! Even if resistive touch is not used, the TOUCH pin has to be defined!
 // It can be a random unused pin.
@@ -52,7 +52,7 @@
 
 // ------- Uncomment the define below if you want to use SLEEP and wake up on touch -------
 // The pin where the IRQ from the touch screen is connected uses ESP-style GPIO_NUM_* instead of just pinnumber
-#define touchInterruptPin GPIO_NUM_27
+#define touchInterruptPin GPIO_NUM_39
 
 // ------- Uncomment the define below if you want to use a piezo buzzer and specify the pin where the speaker is connected -------
 //#define speakerPin 26
@@ -404,7 +404,7 @@ void setup()
 
 // Calibrate the touch screen and retrieve the scaling factors
 #ifndef USECAPTOUCH
-  touch_calibrate();
+  //touch_calibrate();
 #endif
 
   // Let's first check if all the files we need exist
